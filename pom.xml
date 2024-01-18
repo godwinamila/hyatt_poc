@@ -9,6 +9,7 @@
   <name>hyattProject</name>
   <description>hyattProject</description>
   <modules>
+    <module>DataServiceConfigs</module>
     <module>registryResourceProject</module>
     <module>connectorExporter</module>
     <module>hyattProjectConfigs</module>
