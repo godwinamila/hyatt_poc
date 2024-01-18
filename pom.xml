@@ -9,6 +9,8 @@
   <name>hyattProject</name>
   <description>hyattProject</description>
   <modules>
+    <module>registryResourceProject</module>
+    <module>connectorExporter</module>
     <module>hyattProjectConfigs</module>
     <module>hyattProjectCompositeExporter</module>
   </modules>

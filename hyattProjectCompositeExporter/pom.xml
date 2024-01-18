@@ -14,8 +14,52 @@
   <name>hyattProjectCompositeExporter</name>
   <description>hyattProjectCompositeExporter</description>
   <properties>
+    <com..wso2.hyatt.local-entry_._KAFKA_CONNECTION_1>capp/EnterpriseServiceBus</com..wso2.hyatt.local-entry_._KAFKA_CONNECTION_1>
+    <com..wso2.hyatt.metadata_._dummy_metadata>capp/EnterpriseServiceBus</com..wso2.hyatt.metadata_._dummy_metadata>
+    <com..wso2.hyatt.api_._dummy>capp/EnterpriseServiceBus</com..wso2.hyatt.api_._dummy>
+    <com..wso2.hyatt.metadata_._dummy_swagger>capp/EnterpriseServiceBus</com..wso2.hyatt.metadata_._dummy_swagger>
+    <com..wso2.hyatt.connector.lib_._kafkaTransport-connector>capp/EnterpriseServiceBus</com..wso2.hyatt.connector.lib_._kafkaTransport-connector>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
+    <com.hyatt.registry.resource_._walkin-reservation-schema_json>capp/EnterpriseIntegrator</com.hyatt.registry.resource_._walkin-reservation-schema_json>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com..wso2.hyatt.local-entry</groupId>
+      <artifactId>KAFKA_CONNECTION_1</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com..wso2.hyatt.metadata</groupId>
+      <artifactId>dummy_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com..wso2.hyatt.api</groupId>
+      <artifactId>dummy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com..wso2.hyatt.metadata</groupId>
+      <artifactId>dummy_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com..wso2.hyatt.connector.lib</groupId>
+      <artifactId>kafkaTransport-connector</artifactId>
+      <version>3.1.6</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.hyatt.registry.resource</groupId>
+      <artifactId>walkin-reservation-schema_json</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <releases>

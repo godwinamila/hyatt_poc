@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts/>
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="dummy" groupId="com..wso2.hyatt.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/dummy.xml</file>
+    </artifact>
+    <artifact name="dummy_swagger" groupId="com..wso2.hyatt.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/dummy_swagger.yaml</file>
+    </artifact>
+    <artifact name="dummy_metadata" groupId="com..wso2.hyatt.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/dummy_metadata.yaml</file>
+    </artifact>
+    <artifact name="KAFKA_CONNECTION_1" groupId="com..wso2.hyatt.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>/src/main/synapse-config/local-entries/KAFKA_CONNECTION_1.xml</file>
+    </artifact>
+</artifacts>

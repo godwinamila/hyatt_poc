@@ -1,0 +1,11 @@
+---
+key: "dummy-1.0.0"
+name : "dummy"
+displayName : "dummy"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dummy"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

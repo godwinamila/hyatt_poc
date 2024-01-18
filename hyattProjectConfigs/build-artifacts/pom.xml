@@ -13,4 +13,10 @@
   <packaging>pom</packaging>
   <name>hyattProjectConfigs_module</name>
   <description>hyattProjectConfigs_module</description>
+  <modules>
+    <module>api/dummy</module>
+    <module>metadata/dummy_swagger</module>
+    <module>metadata/dummy_metadata</module>
+    <module>local-entries/KAFKA_CONNECTION_1</module>
+  </modules>
 </project>

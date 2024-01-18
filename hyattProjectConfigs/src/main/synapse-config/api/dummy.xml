@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dummy" name="dummy" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/to-kafka">
+        <inSequence>
+            <validate cache-schema="true">
+                <schema key="conf:/schema/walkin-reservation-schema.json"/>
+                <on-fail>
+                    <payloadFactory media-type="json">
+                        <format>{"Error":"$1",
+			            "Error Details" : "$2"       }</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                            <arg evaluator="xml" expression="$ctx:ERROR_DETAIL"/>
+                        </args>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="500"/>
+                    <respond/>
+                </on-fail>
+            </validate>
+            <foreach expression="json-eval($.reservation)">
+                <sequence>
+                    <payloadFactory media-type="json">
+                        <format>
+					    {"first_name": "$1","last_name": "$2","email": "$3","phone": "$4","hotel_code": "$5","hotel_name": "$6","checkin_date": "$7","checkout_date": "$8","no_rooms": "$9","special_requests": "$10"}
+		            	</format>
+                        <args>
+                            <arg evaluator="json" expression="$.guest.firstName"/>
+                            <arg evaluator="json" expression="$.guest.lastName"/>
+                            <arg evaluator="json" expression="$.guest.email_address"/>
+                            <arg evaluator="json" expression="$.guest.phone"/>
+                            <arg evaluator="json" expression="$.bookingDetails.hotelCode"/>
+                            <arg evaluator="json" expression="$.bookingDetails.hotelName"/>
+                            <arg evaluator="json" expression="$.bookingDetails.checkinDate"/>
+                            <arg evaluator="json" expression="$.bookingDetails.checkoutDate"/>
+                            <arg evaluator="json" expression="$.bookingDetails.noRooms"/>
+                            <arg evaluator="json" expression="$.bookingDetails.specialRequests[0]"/>
+                        </args>
+                    </payloadFactory>
+                    <kafkaTransport.publishMessages configKey="KAFKA_CONNECTION_1">
+                        <topic>reservations</topic>
+                        <partitionNo>0</partitionNo>
+                    </kafkaTransport.publishMessages>
+                    <log level="full"/>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
